@@ -1,0 +1,85 @@
+\usepackage[ngerman]{babel} % für die deutsche Sprache
+\usepackage{caption} % Für schönere Bildunterschriften
+\usepackage[T1]{fontenc} % Schriftkodierung (Für Sonderzeichen u.a.)
+\usepackage[utf8]{inputenc} % Für die direkte Eingabe von Umlauten im Editor u.a.
+\usepackage{fancyhdr} % Für Kopf- und Fußzeilen
+\usepackage{lscape} % Für Querformat
+
+%% Schriften (Beispiele)
+%% Weitere LaTeX-Schriften im "LaTeX Font Catalogue"
+%% unter: http://www.tug.dk/FontCatalogue/.
+%% ACHTUNG: Ggf. müssen Schriften noch installiert 
+%% werden!
+
+% Serifen-Schriften:
+\usepackage{lmodern} % Schriftart "Latin Modern"
+%\usepackage{garamond} % Schriftart "Garamond"
+
+%Sans Serif-Schriften:
+%\usepackage[scaled]{uarial}
+%\usepackage[scaled]{helvet}
+%%--------------
+\usepackage[normalem]{ulem} % Für das Unterstreichen von Text z.B. mit \uline{}
+\usepackage[left=4cm,right=2cm,top=2.5cm,bottom=2cm,
+textheight=245mm,textwidth=160mm,includeheadfoot,headsep=1cm,
+footskip=1cm,headheight=14.599pt]{geometry} % Einrichtung der Seite 
+
+\usepackage{graphicx} % Zum Laden von Graphiken
+% INFO: Graphiken einbinden
+%
+% \includegraphics[scale=1.00]{dateiname}
+%
+% => Ausgabeformat: PDF-Dokument:
+%    Es können die folgenden (Graphik-)formate eingebunden
+%    werden: .jpg, .png, .pdf, .mps
+% 
+% => Ausgabeformat: DVI/PS:
+%    Folgende (Graphik-)formate werden unterstützt:
+%    .eps, .ps, .bmp, .pict, .pntg
+\usepackage{epstopdf}
+
+% Pakete für Tabellen
+\usepackage{tabularx} % Einfache Tabellen
+\usepackage{longtable} % Tabellen als Gleitobjekte (für die Aufteilung bei langen 
+ %Tabellen über mehrere Seiten)
+\usepackage{multirow} % Für das Verbinden von Zeilen innerhalb einer Tabelle mit
+ % \multirow{anzahl}{*}{Text}
+
+% (Zusatz-)Pakete für Formeln
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+
+\usepackage{setspace} % Paket zum Setzen des Zeilenabstandes
+
+% Farbboxen (für die Merkkästen in dieser Vorlage):
+\usepackage{tcolorbox}
+\tcbset{colback=white,colframe=orange,
+        fonttitle=\bfseries}
+
+\usepackage[colorlinks,pdfpagelabels,pdfstartview=FitH,
+bookmarksopen=true,bookmarksnumbered=true,linkcolor=black,
+plainpages=false,hypertexnames=false,citecolor=black]{hyperref} % Für Verlinkungen
+% INFO: Verlinkungen mit dem hyperref-Paket:
+%
+% Die Angabe von URLs mit dem Befehl \url{} erlaubt einen
+% gesonderten Umgang mit Weblinks. Denn die Links werden verlinkt.
+% Auch erfolgt automatisch am Zeilenende ein Umbruch des Links.
+% Es ist auch nicht erforderlich, Sonderzeichen in der URL manuell zu 
+% entschärfen.
+%
+% TIPP: Sollte ein Umbuch bei einem Link nicht automatisch erfolgen, so kann
+% das daran liegen, dass ein/mehrere Zeichen zusätzlich angegeben werden müssen,
+% an dem der Link umbrochen werden kann.
+% Dies kann mit folgendem Befehl erfolgen (Beispiel):
+% \renewcommand*\UrlBreaks{\do-\do_}
+
+% Das Paket "biblatex" für autom. 
+% Literaturverzeichnisse:
+\usepackage{csquotes} % Für sprachangepasste Anführungszeichen
+\usepackage[
+backend=biber,
+style=verbose-ibid,
+sorting=ynt
+]{biblatex}
+% style=verbose-ibid für die europäische Zitierform in Fußnoten wie von der Fakultät empfohlen

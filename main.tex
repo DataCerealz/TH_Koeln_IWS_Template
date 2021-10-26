@@ -1,0 +1,218 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% LaTeX-Vorlage für Abschlussarbeiten                                       %%
+%% (TH Köln -Campus Gummersbach, Fak. 10)                                    %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% HEADER                                  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[a4paper,12pt,oneside]{article}
+% Optionen:
+% - a4paper => DIN A4-Format
+% - 12pt    => Schriftgröße (weitere  
+%              grundlegende Fontgrößen: 10pt, 11pt)
+% - oneside => Einseitiger Druck
+
+% TODO
+%Schriftgrößen: Fließtext: 12pt, Anmerkungen: 10pt, Überschriften: 14pt,
+%· Zeilenabstand im Fließtext 1,5 (= genau 18pt), längere Zitate im Text (= genau 12 pt)
+%und
+%· Anmerkungen einfach (= genau 10pt),
+
+%% Verwendete Pakete:
+\usepackage{packages}
+
+\addbibresource{references.bib}
+
+\citetrackertrue
+
+
+%\ifciteseen{⟨true⟩}{⟨false⟩} %if already cited anywhere before
+
+%\ifciteibid{⟨true⟩}{⟨false⟩}
+%Expands to ⟨true⟩ if the entry currently being processed is the same as the last one, and to ⟨false⟩ otherwise.
+
+%\iffieldequals{⟨field⟩}{⟨macro⟩}{⟨true⟩}{⟨false⟩}
+%Expands to ⟨true⟩ if the value of the ⟨field⟩ is equal to the definition of ⟨macro⟩, and
+%to ⟨false⟩ otherwise.
+
+%\DeclareCiteCommand{\myfootercitation}[\mkbibfootnote]
+%  {
+%    \usebibmacro{prenote}
+%  }
+%  {\ifciteibid{REPEATED.}{
+%  \ifciteindex{\indexfield{indextitle}}{}%
+%   \textit{\usebibmacro{author}: }
+%   \printfield[citetitle]{labeltitle},
+%   %\usebibmacro{year},
+%   %\usebibmacro{pages},
+%   \printfield[cite]{}
+%   \setunit{\adddot\space}
+%   %\usebibmacro{url+urldate}
+%   }}
+%  {\multicitedelim}
+%  {\usebibmacro{postnote}}
+  
+%  1 Ursula Kirchhoff: Die achtziger Jahre. In: Geschichte der deutschen Kinder- und Jugendliteratur, 1990, S. 354-371, hier: S. 356.
+%· Zweite und weitere Erwähnungen mit Kurztitel: ÿ 2 Kirchhoff: Die achtziger Jahre, S. %358.
+%· Bezieht sich ein Literaturnachweis auf ein Werk, das in der unmittelbar vorhergehenden %Anmerkung genannt ist, kann der Nachweis lauten:
+%ÿ 3 ebd. [ebenda]
+%· Im Literaturverzeichnis wird der vollständige Titel genannt:
+%ÿ Kirchhoff, Ursula: Die achtziger Jahre. In: Geschichte der deutschen Kinder- und
+%Jugendliteratur ,
+%· hrsg. von Reiner Wild, Stuttgart: Metzler 1990, S. 354-371.
+  
+  
+ 
+%\DeclareCiteCommand{\citefirst}[\mkbibfootnote]
+
+%\DeclareCiteCommand{\citesecond}[\mkbibfootnote]
+
+%\DeclareCiteCommand{\citerepeat}[\mkbibfootnote]
+
+% INFO: Zeilenabstand setzen:
+%
+% Befehle:
+% - \singlespacing  => 1-zeilig (Standard)
+% - \onehalfspacing => 1,5-zeilig
+% - \doublespacing  => 2-zeilig
+\onehalfspacing % Zeilenabstand auf 1,5-zeilig setzen
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% DOKUMENT                                %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+  % Unbeschriftetes Vorblatt (Leere Seite)
+  \pagestyle{empty} % Seite ohne Kopf- und Fußzeilen
+  \newpage % Neue Seite
+  
+  % Deckblatt
+  \include{deckblatt}
+  
+  % Abstract (ACHTUNG: Abweichung zur Reihenfolge im Merkblatt!)
+  \include{abstract}
+  
+  \newpage
+  
+  % Inhaltsverzeichnis
+  \tableofcontents
+  % Wenn ein Punkt untergliedert wird, muss es mindestens zwei Unterpunkte geben
+  % Die Gliederung sollte möglichst nicht tiefer als drei- bis vierstufig sein
+  
+  \newpage
+  \pagestyle{fancy} % Kopf- und Fußzeilen aktivieren (=> Paket "fancyhdr")
+ 
+  % Abbildungsverzeichnis  
+  % INFO: Abbildung einbinden (Beispiel):
+  %  \begin{figure}[h!]
+  %    \centering
+  %    \includegraphics[scale=1.00]{Pfad zum Bild}\\
+  %    \caption{Bildunterschrift} 
+  %    \label{Marke zum Referenzieren auf die Abbildung}
+  %  \end{figure}
+  
+  
+  \newpage
+  
+  % Hauptteil des Dokuments
+  \newpage
+  % INFO: Querverweise auf Gliederungselemente, Abbildungen 
+  %       & Tabellen setzen:
+  %
+  % Voraussetzung: Gesetzte Referenzmarke mit dem Befehl: \label{marke}
+  % 
+  % Referenzierung erfolgt dann mittels dem Befehl:
+  % \ref{marke}
+  
+  \section{Einleitung}\label{kap_einleitung}  
+   \include{einleitung}
+   
+  \newpage  
+  \section{Grundlagen}\label{kap_grundlagen}  
+    TEXT FOLGT...
+   
+    \subsection{Unterabschnitt von Grundlagen}\label{subsec_UabsGrundl}
+     
+    Hierbei \autocite{einstein} handelt es sich um ein Beispiel-Kapitel. Es ist zu empfehlen, dass Sie Kapitel und auch Abschnitte immer mit\autocite{SW11} einer kurzen Einleitung beginnen. In dieser beschreiben Sie kurz\autocite[125]{einstein}, was den Leser in diesem Kapitel/Abschnitt erwartet. Bei\autocite{SW11} einem Kapitel mit Abschnitten nehmen Sie auch inhaltlichen Bezug auf die enthaltenen Abschnitte (inklusive\autocite{SW11} Referenzierung auf die Abschnittsnummerierung).
+      
+    Bei Verwendung von Tabellen und auch Abbildungen beachten Sie bitte, dass diese immer Unter-/Überschriften enthalten (inklusive einer Nummer). Im Textfluss erklären/beschreiben Sie die Abbildung bzw. die Tabelle und nehmen Bezug über einen Verweis auf die Nummer.
+  
+  
+  \newpage 
+  \section{Zusammenfassung und Ausblick}\label{kap_zusammfAusbl}  
+   %\input{}
+   TEXT FOLGT...
+   
+     %<MERKKASTEN> (für die eigene Verwendung bitte entfernen
+    \vspace{1cm}
+ \begin{tcolorbox}[title={Inhalte der \textit{Zusammenfassung und Ausblick}}]
+Das Kapitel \textit{Zusammenfassung und Ausblick} enthält folgende formale Aspekte\footnote{Vgl. \cite{BBoJ},S. 6}:
+\begin{itemize}
+\item Kapitelweise \footnote{ \cite{einstein} } Kurzdarstellung der Inhalte (inklusive Referenzierung auf die Kapitelnummerierung) => Nach dem Motto: \textit{Was wurde wo beschrieben?}
+\item Kurzdarstellung \textit{Problem – Lösungsweg – Ergebnisse}
+\item Rückkopplung auf die Einleitung: Wurde die Zielstellung der Arbeit und die Fragestellung zufriedenstellend beantwortet?
+\item Kritische Bewertung (sofern nicht bereits im Hauptteil geschehen)
+\item Offene Probleme
+\item Richtung der zukünftigen/möglichen Arbeiten
+\item Erläuterung, warum welche Aspekte in der Arbeit nicht erläutert wurden
+\end{itemize}
+  \end{tcolorbox}
+  %</MERKKASTEN>   
+   
+  % Literaturverzeichnis
+   % INFO: Referenzieren auf das Literaturverzeichnis:
+   %
+   % Befehl: \cite{refmarke}
+   % 
+   % "refmarke" ist die Angabe in den geschweiften Klammern bei 
+   % \bibitem[]{refmarke}. 
+   \newpage
+    \pagestyle{empty}
+   \section{Quellenverzeichnis}
+  
+  % INFO: Biblatex -Ausgabe des  
+  % Literaturverzeichnisses (Beispiele):   
+  \printbibliography % - => Ausgabe ALLER 
+  %   Einträge
+  % - \printbibliography[nottype=online]
+  %   => Ausgabe der Einträge, bis auf die
+  %      "Online"-Einträge
+  % - \printbibliography[type=online]     
+  %   => Ausgabe nur der "Online"-Einträge  
+   %\printbibliography
+   
+   
+   % Abbildungsverzeichnis
+   \newpage
+    \section*{Abbildungsverzeichnis}
+  \addcontentsline{toc}{section}{Abbildungsverzeichnis} % Manuellen Eintrag im Inhaltsverzeichnis erzeugen
+  \renewcommand{\listfigurename}{} % Name des Abbildungsverzeichnisses ändern
+  \listoffigures
+  
+  % Tabellenverzeichnis
+  \newpage
+  \addcontentsline{toc}{section}{Tabellenverzeichnis}
+  \listoftables
+
+  % Anhang
+  \newpage
+  \pagestyle{fancy}
+  \setcounter{section}{0} % Nummerierung der Gliederungsebene "section" auf 0 setzen
+  \renewcommand*\thesection{\Alph{section}} % Nummerierungsart für die Gliederungsebene "section" 
+  % auf Großbuchstaben setzen
+  \section{Anhang}\label{anhang}
+    \subsection{Unterabschnitt von Anhang}\label{subsec_UabsAnhang}
+    TEXT FOLGT...
+  
+  \newpage
+  \pagestyle{empty}
+  
+  % Erklärung zur eigenständigen Arbeit
+ \include{selbststaendige_arbeit}
+  
+%\newpage
+% Unbeschriftetes Abschlussblatt (Leere Seite)
+%\input{leereSeite}
+    
+\end{document}
+
